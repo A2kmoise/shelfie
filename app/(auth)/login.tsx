@@ -15,12 +15,12 @@ const login = () => {
     }
 
     return (
-        <ThemedView styles = {styles.container} >
+        <ThemedView style = {styles.container} >
 <Spacer />
-<ThemedText>
+<ThemedText style={{color:'black'}}>
     Log in to your account
 </ThemedText>
-
+<Spacer />
 <ThemedButton
 onPress = {handleSubmit} >
     <Text>Login</Text>

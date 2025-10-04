@@ -7,7 +7,7 @@ import Spacer from "../../components/Spacer"
 
 const Profile = () => {
 return(
-    <ThemedView styles = {styles.container}>
+    <ThemedView style = {styles.container}>
         <ThemedText title={true} style = {styles.heading}>
 Your Email
         </ThemedText>

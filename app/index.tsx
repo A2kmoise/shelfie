@@ -12,7 +12,7 @@ import ThemedText from '../components/ThemedText'
 const  Home = () => {
 
         return (
-            <ThemedView styles={styles.container}>
+            <ThemedView style={styles.container}>
                 <ThemedLogo  style={styles.img}/>
                 <Spacer height={20}/>
                 {/*this line shows that our title is going to have title styles from stylesheet and also have the title={true} for the ThemedText.*/}

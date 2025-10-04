@@ -12,11 +12,12 @@ const Register = () => {
         console.log("Register form submitted")
     }
     return(
-        <ThemedView styles = {styles.container}>
+        <ThemedView style = {styles.container}>
             <Spacer />
             <ThemedText>
                 Register For an account
             </ThemedText>
+            <Spacer />
             <ThemedButton onPress={handleSubmit}>
                 <Text>Register</Text>
             </ThemedButton>

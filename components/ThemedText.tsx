@@ -8,14 +8,20 @@ interface ThemedTextProps{
     children?:ReactNode
 }
 
-const ThemedText: React.FC<ThemedTextProps> = ({style, title = false, ...Props}) => {
+const ThemedText: React.FC<ThemedTextProps> = ({style, title = false, children, ...Props}) => {
     const colorScheme = useColorScheme();
     const Theme  = colorScheme && Colors[colorScheme] ? Colors[colorScheme] : Colors.light
 
     const TextColor = title? Theme.title : Theme.text
-return(
-   <Text> </Text>
-)
+return (
+  <Text
+    style={[{ color: TextColor }, style]}
+    {...Props}
+  >
+    {children}
+  </Text>
+);
+
 
 }
 export default ThemedText

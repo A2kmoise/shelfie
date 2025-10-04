@@ -2,18 +2,21 @@ import React, { Component, ReactNode } from 'react'
 import { StyleProp, Text, useColorScheme, View, ViewStyle } from 'react-native'
 import { Colors } from '../constants/Color'
 
-interface ThemedViewProps{
-    styles?:StyleProp<ViewStyle>;
-    children?: ReactNode
+interface ThemedViewProps {
+  style?: StyleProp<ViewStyle>;
+  children?: ReactNode;
 }
 
-const ThemedView: React.FC<ThemedViewProps> = ({styles, ...Props}) => {
-const Colorscheme = useColorScheme()
-const theme = Colorscheme && Colors[Colorscheme] ? Colors[Colorscheme] : Colors.light
+const ThemedView: React.FC<ThemedViewProps> = ({ style,children, ...props }) => {
+  const colorScheme = useColorScheme();
+  const theme =
+    colorScheme && Colors[colorScheme] ? Colors[colorScheme] : Colors.light;
 
-    return (
-      <View style = {[{backgroundColor: theme.background},styles ]} {...Props} />
+  return (
+    <View style={[{ backgroundColor: theme.background }, style]} {...props} >
+      {children} 
+      </View>
+  );
+};
 
-    )
-}
-export default ThemedView
+export default ThemedView;

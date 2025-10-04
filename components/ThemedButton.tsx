@@ -1,4 +1,4 @@
-import React, {ReactNode} from "react";
+import React, {Children, ReactNode} from "react";
 import {StyleProp, Pressable , StyleSheet, ViewStyle} from "react-native";
 
 import { Colors } from "../constants/Color";
@@ -9,10 +9,12 @@ interface ThemedButtonProps{
     onPress?: () => void
 }
 
-const ThemedButton: React.FC<ThemedButtonProps> = ( {style, onPress, ...Props} ) => {
+const ThemedButton: React.FC<ThemedButtonProps> = ( {style, onPress,children, ...Props} ) => {
     return(
         <Pressable
-        style = {({pressed}) => [styles.btn, pressed && styles.pressed ]} onPress={onPress}   {...Props}/>
+        style = {({pressed}) => [styles.btn, pressed && styles.pressed ]} onPress={onPress}   {...Props}>
+            {children}
+            </Pressable>
 
     )
 }
