@@ -2,17 +2,33 @@ import React from 'react'
 import { Text, View, StyleSheet, Image } from 'react-native'
 import {Link}  from 'expo-router'
 import Logo from '../assets/img/Logo_light.png'
+
+//Themede components
 import ThemedView from '../components/ThemedView'
+import ThemedLogo from '../components/ThemedLogo'
+import Spacer from '../components/Spacer'
+import ThemedText from '../components/ThemedText'
 
 const  Home = () => {
 
         return (
             <ThemedView styles={styles.container}>
-                <Image source={Logo} style={styles.img}/>
-                <Text style={styles.title}> Here is home </Text>
-                <Text style={{marginTop: 10, marginBottom: 20}} > Here is where i am</Text>
-                <Link href="/about" style={styles.link}>About page</Link>
-                <Link href="/contact" style={styles.link}>Contact page</Link>
+                <ThemedLogo  style={styles.img}/>
+                <Spacer height={20}/>
+                {/*this line shows that our title is going to have title styles from stylesheet and also have the title={true} for the ThemedText.*/}
+                <ThemedText style={styles.title} title = {true}> 
+                    Here is home 
+                    </ThemedText>
+               
+                <Spacer height={10} />
+                <ThemedText> Here is where i am</ThemedText>
+                <Spacer />
+                <Link href="/about" style={styles.link}>
+               <ThemedText >About page</ThemedText> 
+                </Link>
+                <Link href="/contact" style={styles.link}>
+               <ThemedText >Contact page</ThemedText> 
+                </Link>
 
             </ThemedView>
         )
