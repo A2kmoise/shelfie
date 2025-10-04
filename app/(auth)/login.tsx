@@ -1,18 +1,30 @@
 import React from "react"
-import {StyleSheet} from "react-native"
+import {Pressable, StyleSheet, Text} from "react-native"
 
 import ThemedView from "../../components/ThemedView"
 import ThemedText from "../../components/ThemedText"
 import Spacer from "../../components/Spacer"
 import { Link } from "expo-router"
+import { Colors } from "../../constants/Color"
+import ThemedButton from "../../components/ThemedButton"
+
 
 const login = () => {
+    const handleSubmit = () => {
+        console.log("Login form submitted")
+    }
+
     return (
         <ThemedView styles = {styles.container} >
 <Spacer />
 <ThemedText>
     Log in to your account
 </ThemedText>
+
+<ThemedButton
+onPress = {handleSubmit} >
+    <Text>Login</Text>
+</ThemedButton>
 <Spacer  height={100} />
 
 <Link href = "/register">
@@ -26,16 +38,18 @@ const login = () => {
 }
 
 export default login
-
+ 
 const styles = StyleSheet.create ({
 container: {
 flex: 1,
-justifyContent: "center"
+justifyContent: "center",
+alignItems: "center"
 },
 title: {
     textAlign: "center",
     fontSize: 20,
     marginBottom: 30
-}
+},
+
 
 })
