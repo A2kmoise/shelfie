@@ -8,9 +8,8 @@ import { Colors } from "../../constants/Color"
 
 
 const Create = () => {
-    return
-    (
-        <ThemedView style = {styles.container}>
+    return (
+        <ThemedView style = {styles.container} safe={true}>
 <ThemedText title= {true} style={styles.heading}>
 Add a new Book
 </ThemedText>

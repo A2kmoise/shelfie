@@ -7,12 +7,12 @@ import Spacer from "../../components/Spacer"
 
 const Profile = () => {
 return(
-    <ThemedView style = {styles.container}>
+    <ThemedView style = {styles.container} safe={true}>
         <ThemedText title={true} style = {styles.heading}>
 Your Email
         </ThemedText>
         <Spacer />
-        <ThemedText>
+        <ThemedText style = {styles.heading}>
             Time to start reading some books ...
         </ThemedText>
         <Spacer />
