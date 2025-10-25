@@ -12,7 +12,7 @@ const Register = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const handleSubmit = () => {
-        console.log("Register form submitted")
+        console.log("Register form submitted", email, password);
     }
     return(
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} >
