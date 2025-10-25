@@ -1,23 +1,44 @@
-import React from "react";
-import { StyleSheet,Text } from "react-native";
+import React, { useState } from "react";
+import { Keyboard, StyleSheet,Text, Touchable, TouchableWithoutFeedback } from "react-native";
 import { Link } from "expo-router";
 
 import ThemedView from "../../components/ThemedView";
 import ThemedText from "../../components/ThemedText";
 import ThemedButton from "../../components/ThemedButton";
+import ThemedInput from "../../components/ThemedInput";
 import Spacer from "../../components/Spacer";
 
 const Register = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const handleSubmit = () => {
         console.log("Register form submitted")
     }
     return(
-        <ThemedView style = {styles.container}>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss} >
+        <ThemedView style={styles.container}>
             <Spacer />
-            <ThemedText>
+            <ThemedText title={true} style={styles.title}>
                 Register For an account
             </ThemedText>
-            <Spacer />
+        <ThemedInput 
+        placeholder="Email"
+        style={{width: "80%", marginBottom: 20}}
+        keyboardType="email-address"
+        onChangeText={setEmail}
+        value={email}
+        />
+
+        <ThemedInput 
+        placeholder="Password"
+        secureTextEntry={true}
+        style={{width: "80%", marginBottom: 20}}
+        onChangeText={setPassword}
+        value={password}
+        />
+
+    
+
             <ThemedButton onPress={handleSubmit}>
                 <Text>Register</Text>
             </ThemedButton>
@@ -28,6 +49,7 @@ const Register = () => {
             </Link>
 
         </ThemedView>
+        </TouchableWithoutFeedback>
     )
 }
 export default Register
